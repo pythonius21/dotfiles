@@ -1,0 +1,7 @@
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+setxkbmap de
+
+xrandr --output DP-1 --auto --primary --mode 1920x1080 --refresh 165
+xrandr --output DP-2 --off
+xrandr --output HDMI-1 --off
