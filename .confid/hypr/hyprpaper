@@ -1,6 +1,0 @@
-preload = ~/Pictures/wallpaper/winter.png
-
-wallpaper = ,contain:~/Pictures/wallpaper/winter.png
-
-splash = false
-ipc = off
