@@ -1,12 +1,16 @@
 #!/bin/bash
 
-output=$(headsetcontrol -b)
-battery_percentage=$(echo "$output" | grep -oP 'Level: \d+')
+output=$(headsetcontrol -b 2>/dev/null)
+battery_percentage=$(echo "$output" | grep -oP 'Level:\s*\K\d+')
+charging_status=$(echo "$output" | grep -oP 'Status:\s*\K\w+')
 
-if [[ -n "$battery_percentage" ]]; then
-  output="$battery_percentage%"
-else
-  output="N/A"
+if [[ -z "$battery_percentage" ]]; then
+  echo "N/A"
+  exit 0
 fi
 
-echo "$output"
+if [[ "$charging_status" == BATTERY_CHARGING ]]; then
+  echo "󰂄 Charging: ${battery_percentage}%"
+else
+  echo " Battery: ${battery_percentage}%"
+fi
