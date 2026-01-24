@@ -8,7 +8,7 @@
     "modules-right": ["custom/headset-battery", "pulseaudio", "network", "tray"],
 
     "custom/headset-battery": {
-      "format": " {}",
+      "format": "{}",
       "exec": "~/.config/waybar/headset_battery.sh",
       "interval": 30
     },
@@ -16,7 +16,17 @@
     "clock": {
         "interval": 1,
         "timezone": "Europe/Berlin",
-        "format": "<b>{:%H:%M - %d.%m.%Y}</b>"
+        "format": "<b>{:%H:%M - %d.%m.%Y}</b>",
+        "tooltip-format": "<span>{calendar}</span>",
+        	"calendar": {
+            		"mode": "month",
+            		"format": {
+                	    "months": "<span color='#ff6699'><b>{}</b></span>",
+                      "days": "<span color='#cdd6f4'><b>{}</b></span>",
+                	    "weekdays": "<span color='#7CD37C'><b>{}</b></span>",
+                	    "today": "<span color='#ffcc66'><b>{}</b></span>"
+            	}
+            }
     },
 
     "cpu": {
@@ -67,7 +77,7 @@
         "car": "",
         "default": ["", "", ""]
       },
-      "on-click": "pavucontrol"
+      "on-click": "pwvucontrol"
     },
 
     "tray": {
@@ -78,3 +88,4 @@
         "format": " {free}" 
     },
 }
+
