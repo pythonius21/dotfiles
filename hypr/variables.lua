@@ -1,0 +1,5 @@
+terminal = "alacritty"
+file_manager = "nemo"
+menu = "rofi -show drun -theme $HOME/.config/rofi/launchers/type-1/style-6.rasi"
+logout = "wlogout -p layer-shell -b 4"
+picker = "hyprpicker -a --notify"

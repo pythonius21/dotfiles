@@ -1,0 +1,50 @@
+windowrule = tag +thunar, match:class (Thunar), match:title (Rename)(.*)
+windowrule = tag +thunar, match:class (thunar), match:title (Rename)(.*)
+windowrule = tag +thunar, match:class (Thunar), match:title (File Operation Progress)
+windowrule = tag +thunar, match:class (thunar), match:title (File Operation Progress)
+windowrule = tag +thunar, match:title (Enter name of file to save to)(.*)
+windowrule = tag +thunar, match:title (.*)(Properties)
+windowrule = tag +thunar, match:class (xdg-desktop-portal-gtk)
+
+windowrule = tag +music, match:class ^(io.github.quodlibet.QuodLibet)$
+
+windowrule = tag +copyq, match:class ^(copyq)$
+
+windowrule = tag +ts, match:class ^(TeamSpeak)$
+windowrule = tag +ts, match:class ^(teamspeak-client)$
+
+windowrule = suppress_event maximize, match:class .*
+
+windowrule = no_focus on,match:class (^$),match:title (^$),match:xwayland 1,match:float true,match:fullscreen false,match:pin false
+
+windowrule = no_focus on,match:class ^(steam)$,match:title ^(notificationtoasts_.*_desktop)$
+windowrule = float on,match:class ^(steam)$
+windowrule = monitor 1,match:class ^(steam)$,match:title ^(Steam)$
+
+windowrule = pin on,float on, center on, match:tag thunar
+
+windowrule = pin on,float on,match:class (com.saivert.pwvucontrol)
+windowrule = pin on,float on,match:class (nm-connection-editor)
+
+windowrule = float on,match:tag ts
+windowrule = size 662 1036,match:tag ts
+
+windowrule = float on,match:class ^(org.mozilla.Thunderbird)$
+windowrule = size 1122 882,match:class ^(org.mozilla.Thunderbird)$
+windowrule = size 470 107,match:class ^(org.mozilla.Thunderbird)$,match:title ^(Sending Message)$
+
+windowrule = float on,match:tag music
+windowrule = size 1215 563,match:tag music
+windowrule = monitor 1,match:tag music
+windowrule = move 700 514,match:tag music
+
+windowrule = float on,match:class ^(net.lutris.Lutris)$
+
+windowrule = float on,monitor 1,match:title ^(Steam Acolyte)$
+windowrule = size 285 500,match:title ^(Steam Acolyte)$
+
+windowrule = pin on,float on,center on,match:tag copyq
+windowrule = size 800 600,match:tag copyq
+
+windowrule = no_screen_share on,match:class (librewolf),match:title ^(.*Bitwarden.*)$
+windowrule = no_screen_share on,match:workspace special:magic
